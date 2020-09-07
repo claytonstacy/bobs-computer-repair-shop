@@ -1,0 +1,46 @@
+<ng-container *ngIf="products.length === 0">
+  <mat-spinner></mat-spinner>
+  </ng-container>
+  <div>
+    <h2 style="color: green">
+      Services
+    </h2>
+  </div>
+  <form [formGroup]="form" (ngSubmit)="submit()">
+  <div class="grid-container">
+    <ng-container>
+      <mat-card *ngFor="let product of products">
+        <mat-card-title>
+          {{product.name}}
+        </mat-card-title>
+        <mat-card-content>
+          <mat-checkbox (change)="onChangeEventFunc(product, $event)">Add to order</mat-checkbox>
+          <mat-list-item>Description: {{ product.description }}</mat-list-item>
+          <br />
+          <mat-list-item>Price: {{ product.price}}</mat-list-item>
+        </mat-card-content>
+      </mat-card>
+      <div>
+        <mat-card>
+          <mat-card-title>
+            Add Custom Service
+          </mat-card-title>
+          <mat-card-content>
+            <mat-form-field id="txtCustomService">
+              <mat-label for="txtCustomService" id="lblCustomerService">Custom Service</mat-label>
+
+              <input type="text" matInput formControlName="customService" name="txtCustomService" />
+
+            </mat-form-field>
+            <mat-list-item>Price: We'll contact you with an estimate</mat-list-item>
+          </mat-card-content>
+        </mat-card>
+    </div>
+    </ng-container>
+    <div></div>
+    <div class="buttonContainer">
+      <button mat-raised-button color="accent" (click)="verifyOrder(form.controls.products)">Submit</button>
+    </div>
+
+  </div>
+</form>

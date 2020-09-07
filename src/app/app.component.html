@@ -1,0 +1,30 @@
+<mat-toolbar class="toolbar">
+  <mat-toolbar-row>
+
+    <div class="logo">
+      <img src="../assets/bobs-logo.png" height="55" />
+    </div>
+
+    <div style="width: 80%">
+    <div fxLayout="row wrap" fxLayoutAlign="end start">
+      <button mat-button routerLink="/productslist">Order Services Now</button>
+      <button mat-button routerLink="/invoicelist">Invoices</button>
+      <button mat-button routerLink="/contact">Contact</button>
+      <button mat-button routerLink="/about">About</button>
+      <button mat-button routerLink="/signin">Sign In</button>
+    </div>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+<br />
+<div fxLayout="row wrap">
+  <div fxFlex>
+    <mat-card class="main-container">
+      <mat-card-content>
+        <router-outlet></router-outlet>
+      </mat-card-content>
+
+    </mat-card>
+
+  </div>
+</div>

@@ -1,0 +1,30 @@
+
+<mat-card>
+    <mat-card-title class="blue">
+      Invoice # {{ invoice.id }}
+    </mat-card-title>
+    <hr /><br />
+    <mat-card-content>
+      <div fxLayout="row" class="invoice-details">
+        <div fxFlex="50%" class="details-column">
+          <p>Created on:<br /> {{ invoice.date_created }}</p>
+          <p>Customer:<br /> {{ invoice.customer_name }}</p>
+          <p>Labor:<br /> {{ invoice.labor_description.join(',') }}</p>
+          <p>Services:<br /> {{ invoice.services_description.join(',') }}</p>
+          <p>Parts:<br /> {{ invoice.parts_description.join(',') }}</p>
+        </div>
+        <div fxFlex="50%" class="details-column">
+          <p>Subotal:<br /> $ {{ invoice.subtotal }}</p>
+          <p>Tax:<br /> $ {{ invoice.tax }}</p>
+          <p>Total:<br /> $ {{ invoice.total }}</p>
+          <p>Paid on:<br /> {{ invoice.date_paid }}</p>
+        </div>
+
+
+
+      </div>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-raised-button color="accent" matDialogClose="confirm">OK</button>
+    </mat-card-actions>
+  </mat-card>
